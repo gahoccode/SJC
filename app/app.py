@@ -36,8 +36,8 @@ def main():
                 st.warning("No data fetched for the selected period.")
 
     if df is not None:
-        st.write("Fetched DataFrame preview:")
-        st.write(df.head())
+        st.write("Fetched DataFrame preview (first 5 unique dates):")
+        st.write(df.drop_duplicates('date').head(5))
         # Removed columns display as requested
     if df is not None and not df.empty:
         # Ensure price_spread exists
