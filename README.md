@@ -1,14 +1,25 @@
 # Vietnamese Financial Markets Analysis (Streamlit)
 
 ## Overview
-This Streamlit web app analyzes Vietnamese gold prices, calculates spreads, moving averages, volatility, and provides interactive visualizations. It is designed to meet the requirements in `prd.md` and is fully test-covered according to `tests.md`.
+This Streamlit web app provides comprehensive analytics for the Vietnamese gold market, focusing on SJC gold price data. It enables users to fetch and analyze gold prices, calculate spreads, moving averages, and volatility, and visualize results interactively. The app is designed to meet requirements in `prd.md` and is fully test-covered according to `tests.md`.
 
 ## Features
-- Upload SJC gold price data (CSV)
-- Calculate and visualize buy/sell spreads, moving averages (7/30/90 days), and rolling volatility
-- Seasonality decomposition (future)
-- API rate limiting controls and monitoring
-- Interactive dashboards with Streamlit and Plotly
+- **SJC Gold Price Analysis:**
+  - Fetches SJC gold price data via API (vnstock) for customizable date ranges and intervals
+  - **Spread & Volatility Analytics:**
+  - Calculates and visualizes buy/sell spreads, moving averages (7/30/90 days), and rolling volatility
+  - Interactive dashboards using Streamlit and Plotly
+- **API Rate Limiting & Monitoring:**
+  - Built-in controls for API call frequency and batch size
+  - Visual feedback and warnings for rate limit status
+- **Data Visualization:**
+  - Interactive charts for gold price trends, spreads, and volatility
+- **Testing & Requirements Traceability:**
+  - All core analytics are covered by unit tests
+  - Requirements in `prd.md` are mapped to tests in `tests.md`
+- **Planned/Experimental:**
+  - Seasonality decomposition (future)
+  - Historical API usage analytics (coming soon)
 
 ## Setup Instructions
 
@@ -21,6 +32,11 @@ venv\Scripts\activate
 ### 2. Install Dependencies
 ```
 pip install -r requirements.txt
+```
+
+Or using [uv](https://github.com/astral-sh/uv):
+```
+uv sync
 ```
 
 ### 3. Run the App
