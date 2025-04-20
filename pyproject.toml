@@ -1,0 +1,19 @@
+[project]
+name = "golfdollio"
+version = "0.1.0"
+description = "Vietnamese Financial Markets Analysis Dashboard"
+authors = ["Your Name <your.email@example.com>"]
+requires-python = "==3.10.11"
+
+dependencies = [
+    "streamlit==1.44.1",
+    "pandas==2.2.3",
+    "vnstock==3.2.3",
+    "matplotlib==3.10.1",
+    "seaborn==0.13.2",
+    "plotly==6.0.1",
+    "pytest==8.2.0"
+]
+
+[tool.uv]
+# uv-specific config can go here if needed
