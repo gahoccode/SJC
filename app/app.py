@@ -50,6 +50,12 @@ def main():
             ma90 = moving_average(spread, 90)
             volatility = rolling_volatility(spread, 7)
 
+            # Ensure 'date' is set as index for time series charts
+            if 'date' in df.columns:
+                df = df.copy()
+                df['date'] = pd.to_datetime(df['date'])
+                df = df.set_index('date')
+
             # Visualization
             st.subheader("Gold Price Spread & Volatility")
             plot_gold_spread(df, spread, volatility)
@@ -59,7 +65,8 @@ def main():
             st.line_chart(df[['price_spread']])
 
             st.subheader("Moving Averages of Price Spread")
-            st.line_chart(pd.DataFrame({"MA7": ma7, "MA30": ma30, "MA90": ma90}))
+            ma_df = pd.DataFrame({"MA7": ma7, "MA30": ma30, "MA90": ma90}, index=df.index)
+            st.line_chart(ma_df)
 
             # Buy/Sell Prices Chart
             if 'buy' in df.columns and 'sell' in df.columns:
