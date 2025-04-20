@@ -38,7 +38,7 @@ def main():
     if df is not None:
         st.write("Fetched DataFrame preview:")
         st.write(df.head())
-        st.write("Columns:", df.columns.tolist())
+        # Removed columns display as requested
     if df is not None and not df.empty:
         # Ensure price_spread exists
         if 'price_spread' not in df.columns:
